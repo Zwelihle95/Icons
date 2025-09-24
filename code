@@ -1,0 +1,6 @@
+git init                # initialize git in your project (if not already)
+git add .               # add all files
+git commit -m "first commit"   # save changes
+git branch -M main      # make sure your branch is main
+git remote add origin <your-repo-url>   # connect to GitHub
+git push -u origin main # push to GitHub
