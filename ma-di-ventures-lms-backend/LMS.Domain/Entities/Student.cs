@@ -13,6 +13,7 @@ namespace LMS.Domain.Entities
         public int Id { get; private set; }
         public string FirstName { get; private set; } = string.Empty;
         public string LastName { get; private set; } = string.Empty;
+        public string Company { get; private set; } = string.Empty;
         public Email Email { get; private set; } = null!;
         public SecurePassword SecurePassword { get; private set; } = null!;
 
@@ -21,12 +22,14 @@ namespace LMS.Domain.Entities
         public Student(
             string firstName,
             string lastName,
+            string company,
             Email email,
             SecurePassword securePassword
             )
         {
             FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName)); ;
-            LastName = lastName ?? throw new ArgumentNullException(nameof(lastName)); ;
+            LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
+            Company = company ?? throw new ArgumentNullException(nameof(company));
             Email = email ?? throw new ArgumentNullException(nameof(email));
             SecurePassword = securePassword ?? throw new ArgumentNullException(nameof(securePassword));
         }

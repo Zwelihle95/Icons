@@ -8,5 +8,6 @@ namespace LMS.Domain.ValueObjects
 {
     public class IdNumber
     {
+        // I consider this not essential for the MVP
     }
 }
