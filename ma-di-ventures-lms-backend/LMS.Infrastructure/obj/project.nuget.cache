@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dRqVyo30KGA=",
+  "dgSpecHash": "PjDaMTnP+os=",
   "success": true,
   "projectFilePath": "C:\\Users\\ayand\\Documents\\Icons\\ma-di-ventures-lms-backend\\LMS.Infrastructure\\LMS.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ayand\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

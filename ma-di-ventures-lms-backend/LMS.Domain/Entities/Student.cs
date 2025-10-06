@@ -8,39 +8,9 @@ using System.Threading.Tasks;
 
 namespace LMS.Domain.Entities
 {
-    public class Student
+    public class Student : User
     {
-        public int Id { get; private set; }
-        public string FirstName { get; private set; } = string.Empty;
-        public string LastName { get; private set; } = string.Empty;
         public string Company { get; private set; } = string.Empty;
-        public Email Email { get; private set; } = null!;
-        public SecurePassword SecurePassword { get; private set; } = null!;
-
-        private Student() { }
-
-        public Student(
-            string firstName,
-            string lastName,
-            string company,
-            Email email,
-            SecurePassword securePassword
-            )
-        {
-            FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName)); ;
-            LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
-            Company = company ?? throw new ArgumentNullException(nameof(company));
-            Email = email ?? throw new ArgumentNullException(nameof(email));
-            SecurePassword = securePassword ?? throw new ArgumentNullException(nameof(securePassword));
-        }
-
-        public void ChangeEmail(Email newEmail)
-            => Email = newEmail ?? throw new ArgumentNullException(nameof(newEmail));
-
-        public void ChangePassword(SecurePassword newPassword)
-            => SecurePassword = newPassword ?? throw new ArgumentNullException(nameof(newPassword));
-
-        public bool VerifyPassword(string plainPassword)
-            => SecurePassword.VerifyPassword(plainPassword);
+        public List<CourseEnrollment> Enrollements { get; private set; } = new List<CourseEnrollment>();
     }
 }

@@ -10,4 +10,8 @@
     <Folder Include="Instructor\Commands\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LMS.Domain\LMS.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

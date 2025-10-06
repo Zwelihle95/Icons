@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace LMS.Domain.Entities
 {
-    public class Admin : User
+    public class CourseEnrollment
     {
-        // i do not know what to have here
+
     }
 }

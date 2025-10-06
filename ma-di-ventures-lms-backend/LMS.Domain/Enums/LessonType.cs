@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Domain.Repositories
+namespace LMS.Domain.Enums
 {
-    public class IInstructorRepository
+    public enum LessonType
     {
+        PDF,
+        Video
     }
 }

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Domain.Entities
+namespace LMS.Domain.Repositories.Interfaces
 {
-    public class Admin : User
+    public interface IStudentRepository
     {
-        // i do not know what to have here
     }
 }
