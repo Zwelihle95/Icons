@@ -10,7 +10,7 @@ namespace LMS.Infrastructure.Repositories.Implementations
 {
     public class AdminRepository : IAdminRepository
     {
-        public Task CreateAsync(User user)
+        public Task GetAllAsync(User user)
         {
             throw new NotImplementedException();
         }
