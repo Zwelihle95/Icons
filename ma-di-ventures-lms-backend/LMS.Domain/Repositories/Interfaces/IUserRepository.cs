@@ -9,6 +9,6 @@ namespace LMS.Domain.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-        Task CreateAsync(User user);
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using LMS.Domain.Entities;
 using LMS.Domain.Repositories.Interfaces;
+using LMS.Infrastructure.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,13 @@ namespace LMS.Infrastructure.Repositories.Implementations
 {
     public class UserRepository : IUserRepository
     {
-        public Task CreateAsync(User user)
+        private readonly LMSDbContext _context;
+
+        public UserRepository(LMSDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
+
+
     }
 }

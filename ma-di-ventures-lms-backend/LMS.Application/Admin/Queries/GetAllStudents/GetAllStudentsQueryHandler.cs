@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Admin.Commands.CreateStudent
+namespace LMS.Application.Admin.Queries.GetAllStudents
 {
-    public class CreateStudentResult
+    public class GetAllStudentsQueryHandler
     {
 
     }

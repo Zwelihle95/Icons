@@ -1,5 +1,7 @@
 ﻿using LMS.Domain.Entities;
 using LMS.Domain.Repositories.Interfaces;
+using LMS.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +12,22 @@ namespace LMS.Infrastructure.Repositories.Implementations
 {
     public class AdminRepository : IAdminRepository
     {
-        public Task GetAllAsync(User user)
+        private readonly LMSDbContext _context;
+
+        public AdminRepository(LMSDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+
+        public async Task CreateAsync(User user)
+        {
+            await _context.Students.AddAsync((Student)user);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Student>> GetAllAsync()
+        {
+            return await _context.Students.ToListAsync();
         }
     }
 }
