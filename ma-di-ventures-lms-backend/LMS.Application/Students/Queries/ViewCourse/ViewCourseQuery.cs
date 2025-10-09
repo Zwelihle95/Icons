@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Student.Commands.CompleteAndProgress
+namespace LMS.Application.Students.Queries.GetCourseLessons
 {
-    internal class CompleteAndProgressCommand
+    internal class ViewCourseQuery
     {
     }
 }

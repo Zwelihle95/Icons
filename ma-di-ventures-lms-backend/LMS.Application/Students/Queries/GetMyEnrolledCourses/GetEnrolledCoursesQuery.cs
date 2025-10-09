@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Student.Commands.StartCourse
+namespace LMS.Application.Students.Queries.GetMyEnrolledCourses
 {
-    internal class StartCourseCommand
+    internal class GetEnrolledCoursesQuery
     {
     }
 }

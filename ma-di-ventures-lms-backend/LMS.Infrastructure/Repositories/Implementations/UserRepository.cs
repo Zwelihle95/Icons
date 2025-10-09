@@ -17,7 +17,5 @@ namespace LMS.Infrastructure.Repositories.Implementations
         {
             _context = context;
         }
-
-
     }
 }

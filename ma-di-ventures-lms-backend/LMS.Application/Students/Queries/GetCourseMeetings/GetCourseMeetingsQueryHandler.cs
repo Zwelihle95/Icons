@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Student.Queries.GetCourseMeetings
+namespace LMS.Application.Students.Queries.GetCourseMeetings
 {
     internal class GetCourseMeetingsQueryHandler
     {

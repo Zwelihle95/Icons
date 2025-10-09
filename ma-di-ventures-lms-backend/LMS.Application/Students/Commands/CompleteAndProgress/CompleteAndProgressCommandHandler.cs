@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Student.DTOs
+namespace LMS.Application.Students.Commands.CompleteAndProgress
 {
-    internal class MeetingDto
+    internal class CompleteAndProgressCommandHandler
     {
     }
 }

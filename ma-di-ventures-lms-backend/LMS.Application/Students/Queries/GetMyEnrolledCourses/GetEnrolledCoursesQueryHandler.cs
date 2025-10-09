@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Student.Queries.GetMyEnrolledCourses
+namespace LMS.Application.Students.Queries.GetMyEnrolledCourses
 {
     internal class GetEnrolledCoursesQueryHandler
     {

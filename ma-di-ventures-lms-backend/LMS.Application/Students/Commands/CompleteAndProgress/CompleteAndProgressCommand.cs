@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Student.Commands.CompleteAndProgress
+namespace LMS.Application.Students.Commands.CompleteAndProgress
 {
-    internal class CompleteAndProgressCommandHandler
+    internal class CompleteAndProgressCommand
     {
     }
 }

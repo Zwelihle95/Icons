@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Admin.Commands.CreateStudent
+namespace LMS.Application.Students.Commands.StartCourse
 {
-    public class CreateStudentResult
+    internal class StartCourseCommand
     {
-
     }
 }

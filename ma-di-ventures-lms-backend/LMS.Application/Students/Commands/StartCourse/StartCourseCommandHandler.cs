@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Student.Queries.ViewCourse
+namespace LMS.Application.Students.Commands.StartCourse
 {
-    internal class ViewCourseQueryHandler
+    internal class StartCourseCommandHandler
     {
     }
 }
