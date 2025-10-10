@@ -12,9 +12,9 @@ namespace LMS.Application.Admins.Commands.CreateStudent
 {
     public class CreateStudentCommandHandler
     {
-        private readonly IAdminRepository _repository;
+        private readonly IUserRepository _repository;
 
-        public CreateStudentCommandHandler(IAdminRepository repository)
+        public CreateStudentCommandHandler(IUserRepository repository)
         {
             _repository = repository;
         }
@@ -38,7 +38,7 @@ namespace LMS.Application.Admins.Commands.CreateStudent
                         password
                     );
 
-                await _repository.CreateAsync(student);
+                await _repository.AddAsync(student);
 
                 return new CreateStudentResult
                 {

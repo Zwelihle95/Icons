@@ -12,7 +12,7 @@ namespace LMS.Infrastructure.DatabaseContext
     public class LMSDbContext : DbContext
     {
         public LMSDbContext(DbContextOptions<LMSDbContext> options) : base(options) { }
-        public DbSet<Student> Students { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

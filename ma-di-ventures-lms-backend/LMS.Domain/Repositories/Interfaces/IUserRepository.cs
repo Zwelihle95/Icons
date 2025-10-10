@@ -9,6 +9,9 @@ namespace LMS.Domain.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-
+        Task<User?> GetByIdAsync(int id);
+        Task<IEnumerable<T>> GetAllByRoleAsync<T>() where T : User;
+        Task AddAsync(User user);
+        Task<bool> EmailExistsAsync(string email);
     }
 }
