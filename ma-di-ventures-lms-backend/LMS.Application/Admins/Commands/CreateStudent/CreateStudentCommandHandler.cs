@@ -52,7 +52,7 @@ namespace LMS.Application.Admins.Commands.CreateStudent
                 return new CreateStudentResult
                 {
                     Success = true,
-                    Message = "Student successfully created. " + ex.Message
+                    Message = "Failure creating a student. " + ex.Message
                 };
             }
         }
