@@ -1,4 +1,5 @@
 ﻿using LMS.Domain.Entities;
+using LMS.Domain.Enums;
 using LMS.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,10 +13,17 @@ namespace LMS.Infrastructure.DatabaseContext
     public class LMSDbContext : DbContext
     {
         public LMSDbContext(DbContextOptions<LMSDbContext> options) : base(options) { }
-        public DbSet<User> Users { get; set; }
+       
+        public DbSet<Student> Students { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>()
+                .HasDiscriminator<Role>("Role")
+                .HasValue<Student>(Role.Student)
+                .HasValue<Instructor>(Role.Instructor)
+                .HasValue<Admin>(Role.Admin);
+
             modelBuilder.Entity<User>(entity =>
             {
                 entity.Property(user => user.Email)

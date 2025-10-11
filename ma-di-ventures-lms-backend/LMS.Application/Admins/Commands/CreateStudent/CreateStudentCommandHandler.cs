@@ -2,6 +2,7 @@
 using LMS.Domain.Entities;
 using LMS.Domain.Repositories.Interfaces;
 using LMS.Domain.ValueObjects;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,51 +11,36 @@ using System.Threading.Tasks;
 
 namespace LMS.Application.Admins.Commands.CreateStudent
 {
-    public class CreateStudentCommandHandler
+    public class CreateStudentCommandHandler : IRequestHandler<CreateStudentCommand, CreateStudentResult>
     {
-        private readonly IUserRepository _repository;
+        private readonly IAdminRepository _repository;
 
-        public CreateStudentCommandHandler(IUserRepository repository)
+        public CreateStudentCommandHandler(IAdminRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<CreateStudentResult> HandleAsync(CreateStudentCommand command)
+        public async Task<CreateStudentResult> Handle(CreateStudentCommand request, CancellationToken cancellationToken)
         {
-            try
+            var email = new Email(request.Email);
+            var password = new SecurePassword(request.Password);
+
+            var student = new Student(
+                request.FirstName,
+                request.LastName,
+                request.Company,
+                email,
+                password
+            );
+
+            await _repository.AddAsync(student);
+
+            return new CreateStudentResult
             {
-                // implement a repo to check email existance
-                // implement email exist
-
-                var email = new Email(command.Email);
-                var password = new SecurePassword(command.Password);
-
-                var student = new Student
-                    (
-                        command.FirstName,
-                        command.LastName,
-                        command.Company,
-                        email,
-                        password
-                    );
-
-                await _repository.AddAsync(student);
-
-                return new CreateStudentResult
-                {
-                    StudentId = student.Id,
-                    Success = true,
-                    Message = "Student successfully created."
-                };
-            }
-            catch (Exception ex)
-            {
-                return new CreateStudentResult
-                {
-                    Success = true,
-                    Message = "Failure creating a student. " + ex.Message
-                };
-            }
+                StudentId = student.Id,
+                Success = true,
+                Message = "Student successfully created."
+            };
         }
     }
 }

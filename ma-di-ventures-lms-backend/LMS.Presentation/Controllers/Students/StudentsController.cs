@@ -1,5 +1,6 @@
 using LMS.Application.Admins.Commands.CreateStudent;
 using LMS.Application.Admins.Queries.GetAllStudents;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LMS.Presentation.Controllers.Students
@@ -8,23 +9,18 @@ namespace LMS.Presentation.Controllers.Students
     [Route("[controller]")]
     public class StudentsController : ControllerBase
     {
-        private readonly CreateStudentCommandHandler _createStudentHandler;
-        private readonly GetAllStudentsQueryHandler _getAllStudentsHandler;
-
-        public StudentsController(
-            CreateStudentCommandHandler createStudentHandler,
-            GetAllStudentsQueryHandler getAllStudentsHandler)
+        private readonly IMediator _mediator;
+        public StudentsController(IMediator mediator)
         {
-            _createStudentHandler = createStudentHandler;
-            _getAllStudentsHandler = getAllStudentsHandler;
+            _mediator = mediator;
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateStudent([FromBody] CreateStudentCommand command)
+        public async Task<IActionResult> CreateStudent([FromBody] CreateStudentCommand request)
         {
             try
             {
-                var result = await _createStudentHandler.HandleAsync(command);
+                var result = await _mediator.Send(request);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -37,7 +33,7 @@ namespace LMS.Presentation.Controllers.Students
         public async Task<IActionResult> GetAllStudents([FromBody] string? company = null)
         {
             var query = new GetAllStudentsQuery { CompanyFilter = company };
-            var students = await _getAllStudentsHandler.HandleAsync(query);
+            var students = await _mediator.Send(query);
 
             return Ok(students);
         }

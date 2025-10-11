@@ -19,10 +19,9 @@ namespace LMS.Infrastructure.Repositories.Implementations
             _context = context;
         }
 
-        public async Task AddAsync(User user)
+        public Task AddAsync(User user)
         {
-            await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
+            throw new NotImplementedException();
         }
 
         public Task<bool> EmailExistsAsync(string email)
@@ -30,9 +29,9 @@ namespace LMS.Infrastructure.Repositories.Implementations
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<T>> GetAllByRoleAsync<T>() where T : User
+        public Task<IEnumerable<T>> GetAllByRoleAsync<T>() where T : User
         {
-            return await _context.Users.OfType<T>().ToListAsync();
+            throw new NotImplementedException();
         }
 
         public Task<User?> GetByIdAsync(int id)

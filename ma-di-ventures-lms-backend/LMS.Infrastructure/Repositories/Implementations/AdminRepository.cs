@@ -1,6 +1,6 @@
 ﻿using LMS.Domain.Entities;
 using LMS.Domain.Repositories.Interfaces;
-using LMS.Infrastructure.Context;
+using LMS.Infrastructure.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,9 +19,9 @@ namespace LMS.Infrastructure.Repositories.Implementations
             _context = context;
         }
 
-        public async Task CreateAsync(User user)
+        public async Task AddAsync(Student student)
         {
-            await _context.Students.AddAsync((Student)user);
+            await _context.Students.AddAsync(student);
             await _context.SaveChangesAsync();
         }
 

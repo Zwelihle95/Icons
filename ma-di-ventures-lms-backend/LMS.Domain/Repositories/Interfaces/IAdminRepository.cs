@@ -9,7 +9,7 @@ namespace LMS.Domain.Repositories.Interfaces
 {
     public interface IAdminRepository
     {
+        Task AddAsync(Student student);
         Task<IEnumerable<Student>> GetAllAsync();
-        Task CreateAsync(User user);
     }
 }

@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "LMS.Presentation.Controllers.Students.StudentsController",
+    "Method": "CreateStudent",
+    "RelativePath": "Students",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LMS.Application.Admins.Commands.CreateStudent.CreateStudentCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LMS.Presentation.Controllers.Students.StudentsController",
+    "Method": "GetAllStudents",
+    "RelativePath": "Students",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "company",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

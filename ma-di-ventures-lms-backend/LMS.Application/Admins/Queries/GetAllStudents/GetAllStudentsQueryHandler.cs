@@ -1,7 +1,8 @@
 ﻿using LMS.Application.Students.DTOs;
-using LMS.Domain.Entities;
 using LMS.Domain.Repositories.Interfaces;
+using MediatR;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,22 +10,22 @@ using System.Threading.Tasks;
 
 namespace LMS.Application.Admins.Queries.GetAllStudents
 {
-    public class GetAllStudentsQueryHandler
+    public class GetAllStudentsQueryHandler : IRequestHandler<GetAllStudentsQuery, IEnumerable<StudentDto>>
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IAdminRepository _adminRepository;
 
-        public GetAllStudentsQueryHandler(IUserRepository userRepository)
+        public GetAllStudentsQueryHandler(IAdminRepository adminRepository)
         {
-            _userRepository = userRepository;
+            _adminRepository = adminRepository;
         }
 
-        public async Task<IEnumerable<StudentDto>> HandleAsync(GetAllStudentsQuery query)
+        public async Task<IEnumerable<StudentDto>> Handle(GetAllStudentsQuery request, CancellationToken cancellationToken)
         {
-            var students = await _userRepository.GetAllByRoleAsync<Student>();
+            var students = await _adminRepository.GetAllAsync();
 
-            if (!string.IsNullOrEmpty(query.CompanyFilter))
+            if (!string.IsNullOrEmpty(request.CompanyFilter))
             {
-                students = students.Where(s => s.Company == query.CompanyFilter);
+                students = students.Where(s => s.Company == request.CompanyFilter);
             }
 
             return students.Select(s => new StudentDto

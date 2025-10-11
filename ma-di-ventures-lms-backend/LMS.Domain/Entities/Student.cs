@@ -13,7 +13,7 @@ namespace LMS.Domain.Entities
     public class Student : User
     {
         public string Company { get; set; } = string.Empty;
-        public List<CourseEnrollment> Enrollements { get; set; } = new();
+        //public List<CourseEnrollment> Enrollements { get; set; } = new();
 
         private Student() { }
 

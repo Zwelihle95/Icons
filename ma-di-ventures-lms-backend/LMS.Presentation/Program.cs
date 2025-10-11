@@ -1,9 +1,24 @@
+using LMS.Application.Admins.Commands.CreateStudent;
+using LMS.Infrastructure.DatabaseContext;
+using LMS.Infrastructure.DI;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<LMSDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Add services
+builder.Services.AddInfrastructure();
+
+// Add MediatR - register handlers from the assembly containing your handlers
+builder.Services.AddMediatR(cfg => {
+    cfg.RegisterServicesFromAssemblyContaining<CreateStudentCommandHandler>();
+});
+
+// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
