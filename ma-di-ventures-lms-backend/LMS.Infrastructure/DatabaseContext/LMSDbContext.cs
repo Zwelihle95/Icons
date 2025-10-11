@@ -15,6 +15,7 @@ namespace LMS.Infrastructure.DatabaseContext
         public LMSDbContext(DbContextOptions<LMSDbContext> options) : base(options) { }
        
         public DbSet<Student> Students { get; set; }
+        public DbSet<Course> Courses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -7,11 +7,10 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using MediatR;
-using LMS.Application.Admins.DTOs;
 
 namespace LMS.Application.Admins.Commands.CreateStudent
 {
-    public class CreateStudentCommand : IRequest<CreateStudentResult>
+    public class AddStudentCommand : IRequest<AddStudentResult>
     {
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;

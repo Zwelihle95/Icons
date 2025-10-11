@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace LMS.Domain.Enums
 {
-    public enum LessonType
+    public enum EnrollmentStatus
     {
-        Article,
-        Video,
-        Exercise
+        Active,
+        Completed,
+        Suspended,
+        Dropped
     }
 }

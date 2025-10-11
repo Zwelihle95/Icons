@@ -13,7 +13,11 @@ namespace LMS.Domain.Entities
     public class Student : User
     {
         public string Company { get; set; } = string.Empty;
-        //public List<CourseEnrollment> Enrollements { get; set; } = new();
+        public string FullName { get; set; } = string.Empty;
+
+        // Navigation properties
+        public ICollection<CourseEnrollment> Enrollements { get; set; } = new List<CourseEnrollment>();
+
 
         private Student() { }
 
@@ -21,6 +25,7 @@ namespace LMS.Domain.Entities
         {
             Company = company;
             Role = Role.Student;
+            FullName = $"{firstName} {lastName}";
         }
     }
 }

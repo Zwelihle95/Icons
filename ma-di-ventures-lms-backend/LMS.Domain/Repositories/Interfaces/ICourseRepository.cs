@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace LMS.Domain.Repositories.Interfaces
 {
-    public interface IStudentRepository
+    public interface ICourseRepository
     {
-        Task AddStudentAsync(Student student);
-        Task<IEnumerable<Student>> GetAllStudentsAsync();
+        Task AddCourseAsync(Course course);
+        Task<IEnumerable<Course>> GetAllCoursesAsync();
     }
 }

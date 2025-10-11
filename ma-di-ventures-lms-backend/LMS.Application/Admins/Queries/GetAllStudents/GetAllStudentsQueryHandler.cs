@@ -12,16 +12,16 @@ namespace LMS.Application.Admins.Queries.GetAllStudents
 {
     public class GetAllStudentsQueryHandler : IRequestHandler<GetAllStudentsQuery, IEnumerable<StudentDto>>
     {
-        private readonly IAdminRepository _adminRepository;
+        private readonly IStudentRepository _studentRepository;
 
-        public GetAllStudentsQueryHandler(IAdminRepository adminRepository)
+        public GetAllStudentsQueryHandler(IStudentRepository studentRepository)
         {
-            _adminRepository = adminRepository;
+            _studentRepository = studentRepository;
         }
 
         public async Task<IEnumerable<StudentDto>> Handle(GetAllStudentsQuery request, CancellationToken cancellationToken)
         {
-            var students = await _adminRepository.GetAllAsync();
+            var students = await _studentRepository.GetAllStudentsAsync();
 
             if (!string.IsNullOrEmpty(request.CompanyFilter))
             {

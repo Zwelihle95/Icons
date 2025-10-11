@@ -1,5 +1,4 @@
-﻿using LMS.Application.Admins.DTOs;
-using LMS.Domain.Entities;
+﻿using LMS.Domain.Entities;
 using LMS.Domain.Repositories.Interfaces;
 using LMS.Domain.ValueObjects;
 using MediatR;
@@ -11,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace LMS.Application.Admins.Commands.CreateStudent
 {
-    public class CreateStudentCommandHandler : IRequestHandler<CreateStudentCommand, CreateStudentResult>
+    public class AddStudentCommandHandler : IRequestHandler<AddStudentCommand, AddStudentResult>
     {
-        private readonly IAdminRepository _repository;
+        private readonly IStudentRepository _studentRepository;
 
-        public CreateStudentCommandHandler(IAdminRepository repository)
+        public AddStudentCommandHandler(IStudentRepository studentRepository)
         {
-            _repository = repository;
+            _studentRepository = studentRepository;
         }
 
-        public async Task<CreateStudentResult> Handle(CreateStudentCommand request, CancellationToken cancellationToken)
+        public async Task<AddStudentResult> Handle(AddStudentCommand request, CancellationToken cancellationToken)
         {
             var email = new Email(request.Email);
             var password = new SecurePassword(request.Password);
@@ -33,9 +32,9 @@ namespace LMS.Application.Admins.Commands.CreateStudent
                 password
             );
 
-            await _repository.AddAsync(student);
+            await _studentRepository.AddStudentAsync(student);
 
-            return new CreateStudentResult
+            return new AddStudentResult
             {
                 StudentId = student.Id,
                 Success = true,

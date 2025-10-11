@@ -16,7 +16,7 @@ namespace LMS.Presentation.Controllers.Students
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateStudent([FromBody] CreateStudentCommand request)
+        public async Task<IActionResult> CreateStudent([FromBody] AddStudentCommand request)
         {
             try
             {

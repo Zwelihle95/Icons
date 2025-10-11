@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Admins.DTOs
+namespace LMS.Application.Admins.Commands.CreateStudent
 {
-    public class CreateStudentResult
+    public class AddStudentResult
     {
         public int StudentId { get; set; }
         public bool Success { get; set; }

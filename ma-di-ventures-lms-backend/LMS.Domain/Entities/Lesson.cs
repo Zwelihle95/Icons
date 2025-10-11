@@ -11,9 +11,15 @@ namespace LMS.Domain.Entities
     {
         public int Id { get; set; }
         public int CouseId { get; set; }
-        public string Title { get; private set; } = string.Empty;
-        public string Content { get; private set; } = string.Empty;
-        public LessonType Type { get; private set; }
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Content {  get; set; } = string.Empty;
+        public int DurationInMinutes { get; set; }
         public int Order {  get; set; }
+        public LessonType Type { get; set; }
+        public Progress Progress { get; set; }
+
+        // Navigation properties
+        public Course Course { get; set; } = null!;
     }
 }

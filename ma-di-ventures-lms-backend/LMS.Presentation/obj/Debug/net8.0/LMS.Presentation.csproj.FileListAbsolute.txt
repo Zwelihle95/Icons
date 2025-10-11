@@ -172,6 +172,5 @@ C:\Users\ayand\Documents\Icons\ma-di-ventures-lms-backend\LMS.Presentation\bin\D
 C:\Users\ayand\Documents\Icons\ma-di-ventures-lms-backend\LMS.Presentation\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\ayand\Documents\Icons\ma-di-ventures-lms-backend\LMS.Presentation\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\ayand\Documents\Icons\ma-di-ventures-lms-backend\LMS.Presentation\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-C:\Users\ayand\Documents\Icons\ma-di-ventures-lms-backend\LMS.Presentation\obj\Debug\net8.0\LMS.Presentation.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ayand\Documents\Icons\ma-di-ventures-lms-backend\LMS.Presentation\bin\Debug\net8.0\MediatR.dll
 C:\Users\ayand\Documents\Icons\ma-di-ventures-lms-backend\LMS.Presentation\bin\Debug\net8.0\MediatR.Contracts.dll

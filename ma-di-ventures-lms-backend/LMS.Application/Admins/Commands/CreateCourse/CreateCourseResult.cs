@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Admin.Commands.CreateCourse
+namespace LMS.Application.Admins.Commands.CreateCourse
 {
-    internal class CreateCourseResult
+    public class CreateCourseResult
     {
+        public int CourseId { get; set; }
+        public bool Success { get; set; }
+        public string Message { get; set; } = string.Empty;
     }
 }

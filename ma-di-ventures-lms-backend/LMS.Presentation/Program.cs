@@ -13,7 +13,7 @@ builder.Services.AddInfrastructure();
 
 // Add MediatR - register handlers from the assembly containing your handlers
 builder.Services.AddMediatR(cfg => {
-    cfg.RegisterServicesFromAssemblyContaining<CreateStudentCommandHandler>();
+    cfg.RegisterServicesFromAssemblyContaining<AddStudentCommandHandler>();
 });
 
 // Add services to the container.

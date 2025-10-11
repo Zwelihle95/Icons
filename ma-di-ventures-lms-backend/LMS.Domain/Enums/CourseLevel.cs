@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace LMS.Domain.Enums
 {
-    public enum LessonType
+    public enum CourseLevel
     {
-        Article,
-        Video,
-        Exercise
+        Beginner,
+        Intermediate,
+        Advanced
     }
 }

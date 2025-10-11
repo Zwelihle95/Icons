@@ -14,7 +14,7 @@ namespace LMS.Infrastructure.DI
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.AddScoped<IAdminRepository, AdminRepository>();
-
+            services.AddScoped<IStudentRepository, StudentRepository>();
             return services;
         }
     }
