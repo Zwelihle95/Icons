@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MediatR;
 
-namespace LMS.Application.Admins.Commands.CreateStudent
+namespace LMS.Application.Admins.Commands.AddStudent
 {
     public class AddStudentCommand : IRequest<AddStudentResult>
     {
@@ -17,5 +17,6 @@ namespace LMS.Application.Admins.Commands.CreateStudent
         public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public string Company { get; set; } = string.Empty;
+        public List<int> CourseIds { get; set; } = new List<int>();
     }
 }

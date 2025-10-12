@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LMS.Domain.Entities
 {
-    public class CourseEnrollment
+    public class Enrollment
     {
         public int Id { get; set; }
         public int StudentId { get; set; }

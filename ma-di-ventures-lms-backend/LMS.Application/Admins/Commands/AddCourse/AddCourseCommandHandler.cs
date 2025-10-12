@@ -1,5 +1,4 @@
-﻿using LMS.Application.Admins.Commands.CreateCourse;
-using LMS.Application.Admins.Commands.CreateStudent;
+﻿using LMS.Application.Admins.Commands.AddCourse;
 using LMS.Domain.Entities;
 using LMS.Domain.Repositories.Interfaces;
 using LMS.Domain.ValueObjects;
@@ -12,16 +11,16 @@ using System.Threading.Tasks;
 
 namespace LMS.Application.Admins.Commands.CreateCourse
 {
-    public class CreateCourseCommandHandler : IRequestHandler<CreateCourseCommand, CreateCourseResult>
+    public class AddCourseCommandHandler : IRequestHandler<AddCourseCommand, AddCourseResult>
     {
         private readonly ICourseRepository _courseRepository;
 
-        public CreateCourseCommandHandler(ICourseRepository courseRepository)
+        public AddCourseCommandHandler(ICourseRepository courseRepository)
         {
             _courseRepository = courseRepository;
         }
 
-        public async Task<CreateCourseResult> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
+        public async Task<AddCourseResult> Handle(AddCourseCommand request, CancellationToken cancellationToken)
         {
             var course = new Course
             {
@@ -33,7 +32,7 @@ namespace LMS.Application.Admins.Commands.CreateCourse
 
             await _courseRepository.AddCourseAsync(course);
 
-            return new CreateCourseResult
+            return new AddCourseResult
             {
                 CourseId = course.Id,
                 Success = true,

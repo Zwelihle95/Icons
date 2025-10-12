@@ -23,4 +23,8 @@
     <ProjectReference Include="..\LMS.Application\LMS.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configurations\Students\" />
+  </ItemGroup>
+
 </Project>

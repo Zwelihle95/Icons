@@ -10,6 +10,7 @@ namespace LMS.Domain.Repositories.Interfaces
     public interface ICourseRepository
     {
         Task AddCourseAsync(Course course);
+        Task<Course?> GetByIdAsync(int id);
         Task<IEnumerable<Course>> GetAllCoursesAsync();
     }
 }

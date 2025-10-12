@@ -29,5 +29,10 @@ namespace LMS.Infrastructure.Repositories.Implementations
         {
             return await _context.Courses.ToListAsync();
         }
+
+        public async Task<Course?> GetByIdAsync(int id)
+        {
+            return await _context.Courses.FindAsync(id);
+        }
     }
 }

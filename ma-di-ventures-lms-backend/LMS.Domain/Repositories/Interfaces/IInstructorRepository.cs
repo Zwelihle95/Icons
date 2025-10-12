@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LMS.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace LMS.Domain.Repositories.Interfaces
 {
     public interface IInstructorRepository
     {
+        Task AddInstructorAsync(Instructor instructor);
+        Task<IEnumerable<Instructor>> GetAllInstructorsAsync();
     }
 }

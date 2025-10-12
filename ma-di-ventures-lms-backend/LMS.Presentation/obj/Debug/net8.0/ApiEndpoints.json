@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "LMS.Presentation.Controllers.Courses.CourseController",
+    "Method": "AddCourse",
+    "RelativePath": "Course",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LMS.Application.Admins.Commands.AddCourse.AddCourseCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LMS.Presentation.Controllers.Courses.CourseController",
+    "Method": "GetAllCourses",
+    "RelativePath": "Course",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LMS.Presentation.Controllers.Students.StudentsController",
     "Method": "CreateStudent",
     "RelativePath": "Students",
@@ -9,7 +35,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "LMS.Application.Admins.Commands.CreateStudent.CreateStudentCommand",
+        "Type": "LMS.Application.Admins.Commands.CreateStudent.AddStudentCommand",
         "IsRequired": true
       }
     ],

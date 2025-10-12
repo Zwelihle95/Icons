@@ -5,6 +5,47 @@
     "version": "1.0"
   },
   "paths": {
+    "/Course": {
+      "post": {
+        "tags": [
+          "Course"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCourseCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCourseCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCourseCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Course"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Students": {
       "post": {
         "tags": [
@@ -14,17 +55,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateStudentCommand"
+                "$ref": "#/components/schemas/AddStudentCommand"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateStudentCommand"
+                "$ref": "#/components/schemas/AddStudentCommand"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateStudentCommand"
+                "$ref": "#/components/schemas/AddStudentCommand"
               }
             }
           }
@@ -68,7 +109,24 @@
   },
   "components": {
     "schemas": {
-      "CreateStudentCommand": {
+      "AddCourseCommand": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "level": {
+            "$ref": "#/components/schemas/CourseLevel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AddStudentCommand": {
         "type": "object",
         "properties": {
           "firstName": {
@@ -93,6 +151,15 @@
           }
         },
         "additionalProperties": false
+      },
+      "CourseLevel": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
       }
     }
   }

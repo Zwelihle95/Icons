@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Infrastructure.DI
+namespace LMS.Infrastructure.DependencyInjection
 {
     public static class ServiceContainer
     {
@@ -15,6 +15,10 @@ namespace LMS.Infrastructure.DI
         {
             services.AddScoped<IAdminRepository, AdminRepository>();
             services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<IInstructorRepository, InstructorRepository>();
+            services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
+
             return services;
         }
     }

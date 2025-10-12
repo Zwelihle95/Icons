@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Admins.Commands.CreateCourse
+namespace LMS.Application.Admins.Commands.AddCourse
 {
-    public class CreateCourseCommand : IRequest<CreateCourseResult>
+    public class AddCourseCommand : IRequest<AddCourseResult>
     {
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;

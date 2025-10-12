@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Instructor.Queries.GetAssignedCourses
+namespace LMS.Application.Instructors.Queries.GetAssignedCourses
 {
-    internal class GetAssignedCoursesQuery
+    public class GetAssignedCoursesQuery
     {
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using LMS.Domain.ValueObjects;
+using LMS.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -10,7 +11,19 @@ namespace LMS.Domain.Entities
 {
     public class Instructor : User
     {
-        public List<Course> Courses { get; private set; } = new List<Course>();
-        public List<string> Companies { get; private set; } = new List<string>();
+        public string Bio {  get; set; } = string.Empty;
+        public string Specialization {  get; set; } = string.Empty;
+
+        // Navigation property
+        public ICollection<Course> Courses { get; private set; } = new List<Course>();
+
+        private Instructor() { }
+
+        public Instructor(string firstName, string lastName, Email email, SecurePassword password, string bio, string specialization) : base(firstName, lastName, email, password)
+        {
+            Bio = bio;
+            Specialization = specialization;
+            Role = Role.Instructor;
+        }
     }
 }

@@ -29,5 +29,10 @@ namespace LMS.Infrastructure.Repositories.Implementations
         {
             return await _context.Students.ToListAsync();
         }
+
+        public Task<Student> GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

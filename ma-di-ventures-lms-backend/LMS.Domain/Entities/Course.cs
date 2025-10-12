@@ -20,6 +20,7 @@ namespace LMS.Domain.Entities
 
         // Navigation properties
         public ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
+        public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
         public Instructor Instructor { get; set; } = null!;
 
         public string CalculateCourseDuration()

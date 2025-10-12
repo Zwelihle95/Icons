@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMS.Application.Admins.Commands.CreateStudent
+namespace LMS.Application.Admins.Commands.AddCourse
 {
-    public class AddStudentResult
+    public class AddCourseResult
     {
-        public int StudentId { get; set; }
+        public int CourseId { get; set; }
         public bool Success { get; set; }
         public string Message { get; set; } = string.Empty;
     }

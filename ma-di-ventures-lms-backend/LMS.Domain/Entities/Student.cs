@@ -16,7 +16,7 @@ namespace LMS.Domain.Entities
         public string FullName { get; set; } = string.Empty;
 
         // Navigation properties
-        public ICollection<CourseEnrollment> Enrollements { get; set; } = new List<CourseEnrollment>();
+        public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
 
 
         private Student() { }

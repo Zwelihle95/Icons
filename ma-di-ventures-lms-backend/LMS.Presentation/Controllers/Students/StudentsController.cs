@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LMS.Presentation.Controllers.Students
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class StudentsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -15,7 +15,7 @@ namespace LMS.Presentation.Controllers.Students
             _mediator = mediator;
         }
 
-        [HttpPost]
+        [HttpPost("add-student")]
         public async Task<IActionResult> CreateStudent([FromBody] AddStudentCommand request)
         {
             try
@@ -29,7 +29,7 @@ namespace LMS.Presentation.Controllers.Students
             }
         }
 
-        [HttpGet]
+        [HttpGet("all-students")]
         public async Task<IActionResult> GetAllStudents([FromBody] string? company = null)
         {
             var query = new GetAllStudentsQuery { CompanyFilter = company };

@@ -11,5 +11,6 @@ namespace LMS.Domain.Repositories.Interfaces
     {
         Task AddStudentAsync(Student student);
         Task<IEnumerable<Student>> GetAllStudentsAsync();
+        Task<Student> GetByIdAsync(int id);
     }
 }

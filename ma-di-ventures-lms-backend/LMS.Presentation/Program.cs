@@ -1,6 +1,6 @@
 using LMS.Application.Admins.Commands.CreateStudent;
 using LMS.Infrastructure.DatabaseContext;
-using LMS.Infrastructure.DI;
+using LMS.Infrastructure.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

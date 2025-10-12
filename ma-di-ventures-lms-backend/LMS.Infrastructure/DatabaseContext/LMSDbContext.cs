@@ -1,6 +1,10 @@
 ﻿using LMS.Domain.Entities;
 using LMS.Domain.Enums;
 using LMS.Domain.ValueObjects;
+using LMS.Infrastructure.Configurations.Courses;
+using LMS.Infrastructure.Configurations.Enrollments;
+using LMS.Infrastructure.Configurations.Instructors;
+using LMS.Infrastructure.Configurations.Lessons;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,9 +20,16 @@ namespace LMS.Infrastructure.DatabaseContext
        
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
+        public DbSet<Lesson> Lessons { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Apply all configurations
+            modelBuilder.ApplyConfiguration(new CourseConfiguration());
+            modelBuilder.ApplyConfiguration(new EnrollmentConfiguration());
+
             modelBuilder.Entity<User>()
                 .HasDiscriminator<Role>("Role")
                 .HasValue<Student>(Role.Student)
